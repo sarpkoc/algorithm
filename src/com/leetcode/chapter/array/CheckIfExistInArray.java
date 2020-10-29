@@ -3,6 +3,7 @@ package com.leetcode.chapter.array;
 import java.util.ArrayList;
 import java.util.List;
 
+//leetcode #1346
 public class CheckIfExistInArray {
 
 	public static void main(String[] args) {
