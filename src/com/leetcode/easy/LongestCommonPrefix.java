@@ -1,5 +1,6 @@
 package com.leetcode.easy;
 
+//leetcode #3226
 public class LongestCommonPrefix {
 
 	public static void main(String[] args) {
