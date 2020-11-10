@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.chapter.singlylinkedlist;
 
 //leetcode #707
 public class MyLinkedList {
