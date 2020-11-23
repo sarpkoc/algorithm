@@ -1,4 +1,4 @@
-package com.leetcode.hard;
+package com.udemy;
 
 //leetcode #52
 public class TotalNQueens {
