@@ -1,4 +1,4 @@
-package com.udemy;
+package com.udemy.backtracking;
 
 //leetcode #52
 public class TotalNQueens {
