@@ -16,14 +16,14 @@ public class SmallestStringGivenNumericValue {
         
         for (int i = n; i >= 1; i--) {
 			if (remaining >= 26) {
-				result.insert(0, (char) 122);
+				result.append((char) 122);
 				remaining = remaining - 26 + 1;
 			} else {
-				result.insert(0, (char) (remaining + 96));
+				result.append((char) (remaining + 96));
 				remaining = 1;
 			}
 		}
                      
-        return result.toString();
+        return result.reverse().toString();
     }
 }
