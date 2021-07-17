@@ -3,26 +3,40 @@ package com.leetcode.medium;
 //leetcode #200
 public class NumberOfIslands {
 	public static void main(String[] args) {
-		String s = "aaabbbabbbb";
-		int[] cost = {3,5,10,7,5,3,5,5,4,8,1};
-		NumberOfIslands minCost = new NumberOfIslands();
-		System.out.println(minCost.minCost(s, cost));
+		char[][] inputs = {{'1','1','1','1','0'},{'1','1','0','1','0'},{'1','1','0','0','0'}
+			,{'0','0','0','0','0'},{'0','0','0','0','0'}};
+
+		NumberOfIslands num = new NumberOfIslands();
+		System.out.println(num.numIslands(inputs));
+
 	}
 
-	public int minCost(String s, int[] cost) {
-		int sumCost = 0;
-		for (int i = 1; i < s.length(); i++) {
-			if (s.charAt(i) == s.charAt(i - 1)) {
-				if (cost[i] < cost[i - 1]) {
-					sumCost += cost[i];
-					int temp = cost[i - 1];
-					cost[i - 1] = cost[i];
-					cost[i] = temp;
-				} else {
-					sumCost += cost[i - 1];
+	public int numIslands(char[][] grid) {
+		int count = 0;
+
+		for (int row = 0; row < grid.length; row++) {
+			for (int column = 0; column<grid[row].length; column++) {
+				if (grid[row][column] == '1'){
+					count++;
+					dfs(grid, row, column);
 				}
 			}
 		}
-		return sumCost;
+
+		return count;
+	}
+
+	private void dfs(char[][] grid, int row, int column){
+		if(row<0 || column <0 || row>=grid.length || column>=grid[row].length){
+			return;
+		}
+		if (grid[row][column] == '0'){
+			return;
+		}
+		grid[row][column] = '0';
+		dfs(grid, row + 1, column);
+		dfs(grid, row - 1, column);
+		dfs(grid, row, column + 1);
+		dfs(grid, row, column - 1);
 	}
 }
